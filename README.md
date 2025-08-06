@@ -38,6 +38,13 @@ CHATBOT_PROJECT/
 
 ---
 
+## 🌐 Live Demo
+
+🚀 Try the chatbot live here:
+👉 https://langchain-chatbot-p4wyfn8kcqdjzjjfqoxxqb.streamlit.app/
+
+---
+
 ## 🛠️ Getting Started — Local Run
 
 1. Clone the repo:
