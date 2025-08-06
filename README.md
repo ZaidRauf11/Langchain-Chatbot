@@ -4,13 +4,6 @@ A multi‑mode AI Chat Assistant built with **LangChain** and **Google Gemini 
 
 ---
 
-## 🚀 Live Demo
-
-Try it out:  
-🔗 [https://langchain-chatbot-p4wyfn8kcqdjzjjfqoxxqb.streamlit.app/](https://langchain-chatbot-p4wyfn8kcqdjzjjfqoxxqb.streamlit.app/)
-
----
-
 ## 🔧 Features
 
 - 🎭 Multiple chatbot roles:
@@ -52,23 +45,31 @@ CHATBOT_PROJECT/
    git clone https://github.com/ZaidRauf11/Langchain-Chatbot.git
    cd Langchain-Chatbot
 
-# Create and activate a virtual environment:
+
+Create and activate a virtual environment:
 
 python -m venv venv
 source venv/bin/activate  # on Windows use: venv\Scripts\activate
+
+
 Install dependencies:
+
 pip install -r requirements.txt
 
-# Create a .env file with:
+
+Create a .env file with:
 
 GOOGLE_API_KEY=your_google_gemini_api_key
 
-# Run the app:
+
+Run the app:
+
 streamlit run langchain_chatbot.py
 Open your browser to http://localhost:8501 to interact with the chatbot.
 
 
-# 🧠 How It Works
+🧠 How It Works
+
 Load API Key from .env using python-dotenv.
 
 Initialize Gemini-2.0 Flash model via ChatGoogleGenerativeAI.
@@ -81,18 +82,18 @@ Chat history is stored in st.session_state.chat_history for display and export.
 
 UI widgets allow mode selection, follow-up prompts, and access to built-in tool sections.
 
-# 📦 Dependencies
-Listed in requirements.txt:
 
-txt
-Copy
-Edit
+📦 Dependencies
+
+Listed in requirements.txt:
 streamlit
 langchain-core
 langchain-google-genai
 python-dotenv
 
-# 📌 Future Enhancements
+
+📌 Future Enhancements
+
 🗃️ Enable file upload and document-based RAG (Retrieval Augmented Generation)
 
 🤖 Integrate vector store for knowledge-based chat
