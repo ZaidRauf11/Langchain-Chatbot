@@ -23,7 +23,7 @@ st.set_page_config(page_title="🧠 Langchain Gemini Chatbot", layout="wide")
 st.title("🌐 AI Chat Assistant (Langchain + Gemini)")
 
 # Choose Mode
-mode = st.selectbox("Choose Chatbot Mode", ["Default", "Math Tutor", "Doctor", "Travel Guide","Career Counselor","Grammar Fixer", "Summarizer", "Surprise Me", "Quiz Generator"])
+mode = st.selectbox("Choose Chatbot Mode", ["Default", "Math Tutor", "Doctor", "Travel Guide","Grammar Fixer", "Summarizer" , "Quiz Generator"])
 
 # Fixed system prompts
 system_prompts = {
@@ -33,7 +33,6 @@ system_prompts = {
     "Travel Guide": "You are a travel expert helping people explore new places.",
     "Grammar Fixer": "You are a grammar expert. Correct the grammar of any input sentence and suggest improvements.",
     "Summarizer": "You summarize long text into concise points.",
-    "Surprise Me": "Give a random interesting fact or trivia.",
     "Quiz Generator": "Generate a short multiple choice quiz on a given topic."
 }
 
@@ -65,7 +64,8 @@ if input_text:
 if st.session_state.chat_history:    
     last_response = st.session_state.chat_history[-1]['bot']
     st.markdown("### 🤖 AI Response")
-    st.code(last_response, language='markdown')
+    st.markdown(f"**{last_response}**", unsafe_allow_html=True)
+    # st.code(last_response, language='markdown')
     
 
 # AI tools section
@@ -102,15 +102,22 @@ with st.expander("🍽️ Recipe Generator"):
         response = chain.invoke({"question": f"Suggest a recipe using: {ingredients}"})
         st.success(response)
 
-
 # Show chat history
 st.markdown("---")
 st.subheader("📝 Chat History")
-for msg in st.session_state.chat_history[::-1]:
+
+for i, msg in enumerate(st.session_state.chat_history[::-1]):
     with st.expander(f"👤 You: {msg['user']}"):
-        st.markdown(f"🧠 Bot Response:")
+        st.markdown("🧠 Bot Response:")
         st.code(msg['bot'], language='markdown')
-        st.download_button("📋 Copy Response", data=msg['bot'], file_name="response.txt")
+        st.download_button("⬇️ Download Response", data=msg['bot'], file_name="response.txt", key=f"download_{i}")
+
+
+
+
+
+
+
 
 
 
