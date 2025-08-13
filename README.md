@@ -32,9 +32,9 @@ A multi‑mode AI Chat Assistant built with **LangChain** and **Google Gemini 
 ## 🗂️ Project Structure
 
 CHATBOT_PROJECT/
-├── langchain_chatbot.py # Main Streamlit app code
-├── requirements.txt # Dependency list
-└── .env # Holds your GOOGLE_API_KEY (not uploaded to GitHub)
+├── langchain_chatbot.py     # Main Streamlit app code
+├── requirements.txt         # List of all required Python dependencies
+└── .env                     # Environment variables
 
 ---
 
